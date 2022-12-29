@@ -32,17 +32,19 @@ const SignUp = () => {
 
 
     return (
-        <div className='w-1/2 mx-auto border-2 rounded my-24 p-5'>
-            <h2 className='text-center text-3xl font-semibold my-5'>Sign Up</h2>
+        <div className='w-1/2 mx-auto border-2 rounded my-24 p-5 bg-purple-900'>
+            <h2 className='text-center text-3xl font-semibold my-5 text-white'>Sign Up</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
                     <div className="mb-2 block">
                         <Label
+                           className='text-pink-400'
                             htmlFor="email1"
                             value="Your email"
                         />
                     </div>
                     <TextInput
+                    className='text-pink-400'
                         id="email1"
                         type="email"
                         name='email'
@@ -53,11 +55,13 @@ const SignUp = () => {
                 <div>
                     <div className="mb-2 block">
                         <Label
+                        className='text-pink-400'
                             htmlFor="password1"
                             value="Your password"
                         />
                     </div>
                     <TextInput
+                    className='text-pink-400'
                         id="password1"
                         type="password"
                         name='password'
@@ -69,7 +73,7 @@ const SignUp = () => {
                     Sign Up
                 </Button>
                 {error}
-                <p>Already have an account please <Link to='/login'><button className='text-red-600 text-lg'>Login</button></Link></p>
+                <p className='text-pink-400'>Already have an account please <Link to='/login'><button className='text-red-600 text-lg'>Login</button></Link></p>
             </form>
         </div>
     );

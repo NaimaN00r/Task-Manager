@@ -7,7 +7,7 @@ const Details = () => {
     // console.log(data)
     return (
         <div className='my-16'>
-            <h2 className='text-2xl text-center text-rose-600 font-semibold my-6'>Task Detail here</h2>
+            <h2 className='text-2xl text-center text-purple-900 font-semibold my-6'>Task Detail here</h2>
             <Card className='mx-auto w-96 h-full'>
                 <img src={data[0]?.image} alt="" />
                 <h5 className="text-2xl font-semibold tracking-tight dark:text-white">

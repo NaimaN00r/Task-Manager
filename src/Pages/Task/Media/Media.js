@@ -9,14 +9,14 @@ const Media = () => {
   const { data: tasks = [], isLoading, refetch } = useQuery({
     queryKey: ['myTasks'],
     queryFn: async () => {
-      const res = await fetch('https://my-task-server-ebon.vercel.app/myTask');
+      const res = await fetch('https://my-task-server-iota.vercel.app/myTask');
       const data = await res.json();
       return data
     }
   })
 
   const handleDeleteProduct = id => {
-    fetch(`https://my-task-server-ebon.vercel.app/myTask/${id}`, {
+    fetch(`https://my-task-server-iota.vercel.app/myTask/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
@@ -43,7 +43,7 @@ const Media = () => {
 
   return (
     <div className='px-16'>
-      <h2 className='text-3xl text-center my-10 text-red-600'>Media Route</h2>
+      <h2 className='text-4xl text-center my-10 text-purple-600'>All Tasks</h2>
 
       <div className='gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
@@ -56,9 +56,9 @@ const Media = () => {
               <h5 className="text-xl font-semibold tracking-tight dark:text-white">
                 Duration Time : {task?.time}
               </h5>
-              <div className='flex mx-auto gap-5'>
-                <Link to={`/myTask/${task?._id}`}><Button className='w-32' gradientDuoTone="purpleToBlue">
-                  Detail
+              <div className='flex mx-auto gap-5 '>
+                <Link to={`/myTask/${task?._id}`}><Button className='w-32 ' gradientDuoTone="purpleToBlue">
+                  Details
                 </Button></Link>
                 <Button onClick={() => handleDeleteProduct(task?._id)} className='w-32' gradientDuoTone="pinkToOrange">
                   Delete

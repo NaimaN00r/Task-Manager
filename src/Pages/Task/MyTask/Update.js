@@ -13,7 +13,7 @@ const Update = () => {
     const handleUpdateUser = event => {
         event.preventDefault();
         console.log(user);
-        fetch(`https://my-task-server-ebon.vercel.app/addTask/${storeReview._id}`, {
+        fetch(`https://my-task-server-iota.vercel.app/addTask/${storeReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

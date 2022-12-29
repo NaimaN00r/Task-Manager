@@ -11,7 +11,7 @@ const Task = ({ myTask, refetch, handleDelete }) => {
       task
     }
     //   console.log(complete)
-    fetch('https://my-task-server-ebon.vercel.app/completeTask', {
+    fetch('https://my-task-server-iota.vercel.app/completeTask', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -32,9 +32,9 @@ const Task = ({ myTask, refetch, handleDelete }) => {
         </h5>
         <p>{task}</p>
         <div className='flex gap-2 mx-auto'>
-          <Button onClick={handleComplete} gradientDuoTone="greenToBlue" size="sm">Completed</Button>
-          <Link to={`/update/${myTask?._id}`}><Button gradientDuoTone="purpleToPink" size="sm">Update</Button></Link>
-          <Button onClick={() => handleDelete(myTask?._id)} size="sm" gradientDuoTone="pinkToOrange">Delete</Button>
+          <Button onClick={handleComplete} gradientDuoTone="purpleToBlue" size="sm">Completed</Button>
+          <Link to={`/update/${myTask?._id}`}><Button gradientDuoTone="greenToBlue" size="sm">Update</Button></Link>
+          <Button onClick={() => handleDelete(myTask?._id)} size="sm" gradientDuoTone="purpleToPink">Delete</Button>
         </div>
       </Card>
     </div>

@@ -53,12 +53,13 @@ const Login = () => {
             .catch(error => console.error(error));
     }
     return (
-        <div className='w-1/2 mx-auto border-2 rounded my-24 p-5'>
-            <h2 className='text-center text-3xl font-semibold my-5'>Login</h2>
+        <div className='w-1/2 mx-auto border-2 rounded my-24 p-5 bg-purple-900'>
+            <h2 className='text-center text-3xl font-semibold my-5 text-white'>Login</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
-                    <div className="mb-2 block">
+                    <div className="mb-2 block ">
                         <Label
+                        className='text-pink-400'
                             htmlFor="email1"
                             value="Your email"
                         />
@@ -74,6 +75,7 @@ const Login = () => {
                 <div>
                     <div className="mb-2 block">
                         <Label
+                        className='text-pink-400'
                             htmlFor="password1"
                             value="Your password"
                         />
@@ -86,14 +88,14 @@ const Login = () => {
                         required={true}
                     />
                 </div>
-                <Button type="submit">
+                <Button type="submit" className=''>
                     Login
                 </Button>
-                <Button onClick={handleGoogleSignIn} type="submit">
+                <Button onClick={handleGoogleSignIn} type="submit" >
                     Google
                 </Button>
                 {error}
-                <p><small>New to this website ? please Register <Link to='/signup'><button className='text-red-600 text-lg'>Sign Up</button></Link></small></p>
+                <p><small className='text-pink-400'>New to this website ? please Register <Link to='/signup'><button className='text-red-600 text-lg'>Sign Up</button></Link></small></p>
             </form>
         </div>
     );

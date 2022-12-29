@@ -9,14 +9,14 @@ const CompleteTask = () => {
     const { data: completes = [], isLoading, refetch } = useQuery({
         queryKey: ['completeTask'],
         queryFn: async () => {
-            const res = await fetch('https://my-task-server-ebon.vercel.app/completeTask');
+            const res = await fetch('https://my-task-server-iota.vercel.app/completeTask');
             const data = await res.json();
             return data
         }
     })
 
     const handleTaskDelete = id => {
-        fetch(`https://my-task-server-ebon.vercel.app/completeTask/${id}`, {
+        fetch(`https://my-task-server-iota.vercel.app/completeTask/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -42,12 +42,12 @@ const CompleteTask = () => {
     }
     return (
         <div className='pl-16 mx-5'>
-            <h1 className='text-2xl text-center text-rose-600 my-8'>Complete Task</h1>
+            <h1 className='text-4xl text-center text-purple-900 my-8'>Complete Task</h1>
             <div className='gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     completes.map(complete => <div className="max-w-sm">
                         <Card>
-                            <h5 className="text-xl font-semibold text-gray-900 dark:text-white">
+                            <h5 className="text-xl font-semibold text-pink-500 dark:text-white">
                                 Task Details:
                             </h5>
                             <p className="font-normal text-gray-700 dark:text-gray-400">
@@ -55,7 +55,7 @@ const CompleteTask = () => {
                             </p>
                             <div className="flex gap-2 mx-auto">
                                 <div>
-                                    <Button onClick={() => handleTaskDelete(complete?._id)} gradientDuoTone="greenToBlue">
+                                    <Button onClick={() => handleTaskDelete(complete?._id)} gradientDuoTone="purpleToBlue">
                                         Delete
                                     </Button>
                                 </div>
@@ -65,7 +65,7 @@ const CompleteTask = () => {
                                     </Button></Link>
                                 </div>
                                 <div>
-                                    <Link><Button gradientDuoTone="redToYellow">
+                                    <Link><Button gradientDuoTone="purpleToBlue">
                                         Comment
                                     </Button></Link>
                                 </div>

@@ -1,3 +1,4 @@
+import { Button } from 'flowbite-react';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -7,7 +8,7 @@ const AddTask = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
 
-    const imageHostKey = process.env.REACT_APP_imgbb_key;
+    const imageHostKey = "d6f4ba825ae32d4c6e0f11b90f2819a4";
     console.log(imageHostKey)
 
     const handleAddProduct = data => {
@@ -34,7 +35,7 @@ const AddTask = () => {
 
                     console.log(task)
 
-                    fetch('https://my-task-server-ebon.vercel.app/myTask', {
+                    fetch('https://my-task-server-iota.vercel.app/myTask', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -52,44 +53,46 @@ const AddTask = () => {
     };
     return (
         <div>
-            <h2 className='text-2xl text-center my-8 text-red-600'>Add Task</h2>
-            <div className='mt-10 w-96 mx-auto'>
+            <h2 className='text-5xl text-bold text-center my-8 text-purple-900'>Add Your Task</h2>
+            <div className='mt-10 w-96 mx-auto border-2 rounded my-24 p-5 bg-purple-900'>
                 <form onSubmit={handleSubmit(handleAddProduct)}>
 
                     <div className="form-control w-full max-w-xs">
-                        <label className="label"><span className="label-text">Task Name</span></label>
-                        <input type="text" className="input input-bordered w-full max-w-xs" {...register("name", {
+                        <label className="label"><span className="label-text text-pink-500 text-xl">Task Name</span></label>
+                        <input type="text" className="input input-bordered rounded w-full max-w-xs" {...register("name", {
                             required: "name is required"
                         })} />
                         {errors.price && <p className='text-red-600'>{errors.name.message}</p>}
                     </div>
 
                     <div className="form-control w-full max-w-xs">
-                        <label className="label"><span className="label-text">Time Duration</span></label>
-                        <input type="text" className="input input-bordered w-full max-w-xs" {...register("time", {
+                        <label className="label"><span className="label-text text-pink-500 text-xl">Time Duration</span></label>
+                        <input type="text" className="input input-bordered rounded w-full max-w-xs" {...register("time", {
                             required: "time is required"
                         })} />
                         {errors.price && <p className='text-red-600'>{errors.time.message}</p>}
                     </div>
 
                     <div className="form-control w-full max-w-xs">
-                        <label className="label"><span className="label-text">Task Detail</span></label>
-                        <textarea id="comment" rows="4" class="border w-full max-w-xs p-2 text-sm" placeholder="Write task details..." {...register("detail", {
+                        <label className="label"><span className="label-text text-pink-500 text-xl">Task Details</span></label>
+                        <textarea id="comment" rows="4" class="border w-full rounded max-w-xs p-2 text-sm" placeholder="Write task details..." {...register("detail", {
                             required: "Description is required"
                         })}></textarea>
                         {errors.detail && <p className='text-red-600'>{errors.detail.message}</p>}
                     </div>
 
                     <div className="form-control w-full max-w-xs">
-                        <label className="label"><span className="label-text">Photo</span></label>
-                        <input type="file" className="input input-bordered w-full max-w-xs" {...register("image", {
+                        <label className="label"><span className="label-text text-pink-500 text-xl">Photo</span></label>
+                        <input type="file" className="input input-bordered rounded w-full max-w-xs" {...register("image", {
                             required: "Photo is required"
                         })} />
-                        {errors.image && <p className='text-red-600'>{errors.image.message}</p>}
+                        {errors.image && <p className='text-pink-500'>{errors.image.message}</p>}
                     </div>
 
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full max-w-xs my-5 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Task</button>
-
+                    {/* <button type="submit" class="text-white  hover:bg-purple-900 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full max-w-xs my-5 px-5 py-2.5 text-center dark:bg-purple-900 dark:hover:bg-purple-900 dark:focus:ring-purple-300">Add Task</button> */}
+                    <Button type='submit' className='mb-3 mt-5 w-52 mx-auto' gradientDuoTone="pinkToOrange">
+                    Add Task
+                </Button>
                 </form>
             </div>
         </div>
